@@ -1,0 +1,33 @@
+{
+    "resolutions": [
+        {
+            "layers": ["BG", "R16"],
+            "sizes": [16, 32]
+        },
+        {
+            "layers": ["BG", "R20"],
+            "sizes": [20, 40]
+        },
+        {
+            "layers": ["BG", "R24"],
+            "sizes": [24, 48]
+        },
+        {
+            "layers": ["BG", "R64"],
+            "sizes": [64, 128, 152, 167, 180, 192, 512]
+        }
+    ],
+    "sharpen": 0.3,
+    "png_files": {
+        "icon-32": 32,
+        "icon-64": 64,
+        "icon-512": 512,
+        "apple-touch-icon-ipad-retina": 167,
+        "apple-touch-icon-iphone-retina": 180,
+        "android-web-app": 192
+    },
+    "ico_files": {
+        "desktop_icon": [16, 20, 24, 32, 40, 48, 64, 128, 512],
+        "favicon": [16, 20, 24, 32, 128]
+    }
+}
