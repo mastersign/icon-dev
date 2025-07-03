@@ -4,10 +4,10 @@
 <svg
    width="240"
    height="240"
-   viewBox="0 0 63.5 63.5"
+   viewBox="0 0 240 240"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    sodipodi:docname="template.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -18,7 +18,18 @@
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
   <style
-     id="style21"></style>
+     id="style21">.form1-bg { fill:#003380; }
+.form2-bg { fill:#118000; }
+.form3-bg { fill:#ff5500; }
+.inlay { 
+    opacity:0.75;
+    fill:#ffffff;
+}
+.gradient_fx { 
+    opacity:0.7;
+    mix-blend-mode:soft-light;
+}
+</style>
   <title
      id="title3">Icon</title>
   <sodipodi:namedview
@@ -32,28 +43,29 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="2"
-     inkscape:cx="116.5"
-     inkscape:cy="123.25"
-     inkscape:window-width="1920"
-     inkscape:window-height="991"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="R24">
+     inkscape:zoom="2.8284271"
+     inkscape:cx="88.565125"
+     inkscape:cy="104.29825"
+     inkscape:window-width="2046"
+     inkscape:window-height="1360"
+     inkscape:window-x="2560"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="R64"
+     showguides="false">
     <inkscape:grid
        id="grid1"
        units="px"
        originx="0"
        originy="0"
-       spacingx="3.96875"
-       spacingy="3.96875"
+       spacingx="15"
+       spacingy="15"
        empcolor="#00e539"
        empopacity="0.30196078"
        color="#00e53a"
        opacity="0.14902"
        empspacing="4"
-       enabled="true"
+       enabled="false"
        visible="true"
        snapvisiblegridlinesonly="false" />
     <inkscape:grid
@@ -61,12 +73,12 @@
        units="px"
        originx="0"
        originy="0"
-       spacingx="3.175"
-       spacingy="3.175"
+       spacingx="12"
+       spacingy="12"
        empcolor="#00bfe5"
        empopacity="0.30196078"
        color="#00bde5"
-       opacity="0.14901961"
+       opacity="0.14902"
        empspacing="5"
        enabled="false"
        visible="true"
@@ -76,13 +88,28 @@
        units="px"
        originx="0"
        originy="0"
-       spacingx="2.6458333"
-       spacingy="2.6458333"
+       spacingx="9.9999997"
+       spacingy="9.9999997"
        empcolor="#0073e5"
        empopacity="0.30196078"
        color="#0073e5"
        opacity="0.14902"
        empspacing="6"
+       enabled="false"
+       visible="true"
+       snapvisiblegridlinesonly="false" />
+    <inkscape:grid
+       id="grid4"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="3.75"
+       spacingy="3.75"
+       empcolor="#3f3fff"
+       empopacity="0.25098039"
+       color="#3f3fff"
+       opacity="0.12549"
+       empspacing="8"
        enabled="false"
        visible="true"
        snapvisiblegridlinesonly="false" />
@@ -163,7 +190,7 @@
        x2="39.6875"
        y2="55.5625"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-3.96875,3.96875)" />
+       gradientTransform="matrix(3.7795276,0,0,3.7795276,-15,15)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient10"
@@ -172,7 +199,8 @@
        y1="15.875"
        x2="47.625"
        y2="43.65625"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="scale(3.7795276)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient10"
@@ -182,7 +210,7 @@
        x2="55.5625"
        y2="31.75"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(3.96875,-3.96875)" />
+       gradientTransform="matrix(3.7795276,0,0,3.7795276,15,-15)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient10"
@@ -192,7 +220,7 @@
        y1="23.8125"
        x2="39.6875"
        y2="55.5625"
-       gradientTransform="matrix(1.0399999,0,0,1.0400001,-4.1274993,1.5874999)" />
+       gradientTransform="matrix(3.9307083,0,0,3.930709,-15.599997,5.9999996)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient10"
@@ -202,7 +230,7 @@
        y1="15.875"
        x2="47.625"
        y2="43.65625"
-       gradientTransform="matrix(1.0666666,0,0,1.0666667,-1.0583327,-3.1750002)" />
+       gradientTransform="matrix(4.0314958,0,0,4.0314962,-3.9999976,-12.000001)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient10"
@@ -212,13 +240,13 @@
        y1="7.9375"
        x2="55.5625"
        y2="31.75"
-       gradientTransform="matrix(0.99923813,0,0,0.9998407,3.9947945,-3.963064)" />
+       gradientTransform="matrix(3.7766481,0,0,3.7789255,15.098436,-14.97851)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient10"
        id="linearGradient19"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0666665,0,0,1.0666666,-4.2333328,2.0018615e-7)"
+       gradientTransform="matrix(4.0314954,0,0,4.0314958,-15.999998,7.5660907e-7)"
        x1="7.9375"
        y1="23.8125"
        x2="39.6875"
@@ -228,7 +256,7 @@
        xlink:href="#linearGradient10"
        id="linearGradient20"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0370369,0,0,1.0370371,-0.58796188,-1.763889)"
+       gradientTransform="matrix(3.9195095,0,0,3.9195103,-2.2222181,-6.6666671)"
        x1="19.84375"
        y1="15.875"
        x2="47.625"
@@ -238,257 +266,400 @@
        xlink:href="#linearGradient10"
        id="linearGradient21"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(3.9687503,-3.9687496)"
+       gradientTransform="matrix(3.7795276,0,0,3.7795276,15.000001,-14.999998)"
+       x1="31.75"
+       y1="7.9375"
+       x2="55.5625"
+       y2="31.75" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10"
+       id="linearGradient1"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(3.7795276,0,0,3.7795276,-15,15)"
+       x1="7.9375"
+       y1="23.8125"
+       x2="39.6875"
+       y2="55.5625" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10"
+       id="linearGradient2"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="scale(3.7795276)"
+       x1="19.84375"
+       y1="15.875"
+       x2="47.625"
+       y2="43.65625" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10"
+       id="linearGradient3"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(3.7795276,0,0,3.7795276,15,-15)"
        x1="31.75"
        y1="7.9375"
        x2="55.5625"
        y2="31.75" />
   </defs>
   <g
-     inkscape:label="Hintergrund"
+     inkscape:label="BG"
      inkscape:groupmode="layer"
-     id="background"
-     inkscape:highlight-color="#752fb9"
+     id="BG"
+     inkscape:highlight-color="#cd1b57"
      style="display:inline" />
   <g
      inkscape:groupmode="layer"
+     id="R64"
+     inkscape:label="R64"
+     inkscape:highlight-color="#4233ee"
+     style="display:none">
+    <rect
+       id="r1o_64"
+       width="150"
+       height="150"
+       x="0"
+       y="90"
+       ry="0"
+       onmouseout=" "
+       class="form1-bg" />
+    <rect
+       id="r1i_64"
+       width="112.5"
+       height="112.5"
+       x="18.75"
+       y="108.75"
+       ry="0"
+       class="inlay"
+       style="stroke-width:1" />
+    <rect
+       style="fill:url(#linearGradient1)"
+       id="r1fx_64"
+       width="150"
+       height="150"
+       x="0"
+       y="90"
+       ry="0"
+       class="gradient_fx" />
+    <rect
+       id="r2o_64"
+       width="135"
+       height="135"
+       x="60"
+       y="45"
+       ry="30"
+       class="form2-bg" />
+    <rect
+       id="r2i_64"
+       width="97.5"
+       height="97.5"
+       x="78.75"
+       y="63.75"
+       ry="15"
+       class="inlay"
+       style="stroke-width:1" />
+    <rect
+       style="fill:url(#linearGradient2)"
+       id="r2fx_64"
+       width="135"
+       height="135"
+       x="60"
+       y="45"
+       ry="30"
+       class="gradient_fx" />
+    <rect
+       id="r3o_64"
+       width="120"
+       height="120"
+       x="120"
+       y="0"
+       ry="60"
+       class="form3-bg" />
+    <rect
+       id="r3i_64"
+       width="82.5"
+       height="82.5"
+       x="138.75"
+       y="18.75"
+       ry="41.25"
+       class="inlay"
+       style="stroke-width:1" />
+    <rect
+       style="fill:url(#linearGradient3)"
+       id="r3fx_64"
+       width="120"
+       height="120"
+       x="120"
+       y="0"
+       ry="60"
+       class="gradient_fx" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="R24"
-     inkscape:label="Raster 24x24"
+     inkscape:label="R24"
      inkscape:highlight-color="#2f8bb9"
      style="display:none">
     <rect
-       style="fill:#003380"
-       id="r1o-2-2"
-       width="42.333332"
-       height="42.333332"
-       x="1.1413093e-13"
-       y="21.166664"
+       id="r1o_24"
+       width="160"
+       height="160"
+       x="4.3136097e-13"
+       y="79.999992"
        ry="0"
-       onmouseout=" " />
+       onmouseout=" "
+       class="form1-bg"
+       style="stroke-width:3.77953" />
     <rect
-       style="fill:#d7eef4"
-       id="r1i-4-3"
-       width="26.458332"
-       height="26.458334"
-       x="7.9375"
-       y="29.104164"
-       ry="0" />
+       id="r1i_24"
+       width="99.999992"
+       height="100"
+       x="30"
+       y="109.99999"
+       ry="0"
+       class="inlay"
+       style="stroke-width:3.77953" />
     <rect
-       style="opacity:0.7;mix-blend-mode:soft-light;fill:url(#linearGradient19)"
-       id="r1fx-5-2"
-       width="42.333332"
-       height="42.333332"
-       x="1.1413093e-13"
-       y="21.166664"
-       ry="0" />
+       style="fill:url(#linearGradient19);stroke-width:3.77953"
+       id="r1fx_24"
+       width="160"
+       height="160"
+       x="4.3136097e-13"
+       y="79.999992"
+       ry="0"
+       class="gradient_fx" />
     <rect
-       style="fill:#008000"
-       id="r2o-5-2"
-       width="37.041664"
-       height="37.041664"
-       x="15.875"
-       y="10.583333"
-       ry="7.9374995" />
+       style="fill-opacity:1;stroke-width:3.77953"
+       id="r2o_24"
+       width="139.99998"
+       height="139.99998"
+       x="60"
+       y="40"
+       ry="29.999998"
+       class="form2-bg" />
     <rect
-       style="fill:#e5ffd5"
-       id="r2i-1-1"
-       width="21.166666"
-       height="21.166666"
-       x="23.8125"
-       y="18.520832"
-       ry="2.6458347" />
+       id="r2i_24"
+       width="80"
+       height="80"
+       x="90"
+       y="69.999992"
+       ry="10.000005"
+       class="inlay"
+       style="stroke-width:3.77953" />
     <rect
-       style="opacity:0.7;mix-blend-mode:soft-light;fill:url(#linearGradient20)"
-       id="r2fx-7-6"
-       width="37.041664"
-       height="37.041664"
-       x="15.875"
-       y="10.583333"
-       ry="7.9374995" />
+       style="fill:url(#linearGradient20);stroke-width:3.77953"
+       id="r2fx_24"
+       width="139.99998"
+       height="139.99998"
+       x="60"
+       y="40"
+       ry="29.999998"
+       class="gradient_fx" />
     <rect
-       style="fill:#ff6600"
-       id="r3o-1-8"
-       width="31.75"
-       height="31.749998"
-       x="31.75"
-       y="-4.4408921e-16"
-       ry="15.865432" />
+       id="r3o_24"
+       width="120"
+       height="119.99999"
+       x="120"
+       y="-1.6784475e-15"
+       ry="59.963837"
+       class="form3-bg"
+       style="stroke-width:3.77953" />
     <rect
-       style="fill:#fff6d5"
-       id="r3i-1-5"
-       width="15.874998"
-       height="15.874999"
-       x="39.6875"
-       y="7.9375"
-       ry="7.9374995" />
+       id="r3i_24"
+       width="60"
+       height="59.999989"
+       x="150"
+       y="30.000002"
+       ry="29.999994"
+       class="inlay"
+       style="stroke-width:3.77953" />
     <rect
-       style="opacity:0.7;mix-blend-mode:soft-light;fill:url(#linearGradient21)"
-       id="r3fx-5-7"
-       width="31.75"
-       height="31.749998"
-       x="31.75"
-       y="-4.4408921e-16"
-       ry="15.865433" />
+       style="fill:url(#linearGradient21);stroke-width:3.77953"
+       id="r3fx_24"
+       width="120"
+       height="119.99999"
+       x="120"
+       y="-1.6784475e-15"
+       ry="59.96384"
+       class="gradient_fx" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="R20"
-     inkscape:label="Raster 20x20"
+     inkscape:label="R20"
      inkscape:highlight-color="#14b6b4"
      style="display:none">
     <rect
-       style="fill:#003380"
-       id="r1o-2"
-       width="41.274998"
-       height="41.275002"
-       x="2.3841864e-07"
-       y="22.225"
+       id="r1o_20"
+       width="155.99998"
+       height="156"
+       x="9.0110979e-07"
+       y="84"
        ry="0"
-       onmouseout=" " />
+       onmouseout=" "
+       class="form1-bg"
+       style="stroke-width:3.77953" />
     <rect
-       style="fill:#d7eef4"
-       id="r1i-4"
-       width="28.575001"
-       height="28.574999"
-       x="6.3499999"
-       y="28.575001"
-       ry="0" />
+       id="r1i_20"
+       width="108"
+       height="107.99999"
+       x="24"
+       y="108"
+       ry="0"
+       class="inlay"
+       style="stroke-width:3.77953" />
     <rect
-       style="opacity:0.7;mix-blend-mode:soft-light;fill:url(#linearGradient16)"
-       id="r1fx-5"
-       width="41.274998"
-       height="41.275002"
-       x="2.3841864e-07"
-       y="22.225"
-       ry="0" />
+       style="fill:url(#linearGradient16);stroke-width:3.77953"
+       id="r1fx_20"
+       width="155.99998"
+       height="156"
+       x="9.0110979e-07"
+       y="84"
+       ry="0"
+       class="gradient_fx" />
     <rect
-       style="fill:#008000"
-       id="r2o-5"
-       width="38.099998"
-       height="38.099998"
-       x="15.875"
-       y="9.5249996"
-       ry="9.5249996" />
+       style="fill-opacity:1;stroke-width:3.77953"
+       id="r2o_20"
+       width="144"
+       height="144"
+       x="60"
+       y="36"
+       ry="36"
+       class="form2-bg" />
     <rect
-       style="fill:#e5ffd5"
-       id="r2i-1"
-       width="25.4"
-       height="25.4"
-       x="22.225"
-       y="15.875"
-       ry="4.1010408" />
+       id="r2i_20"
+       width="96"
+       height="96"
+       x="84"
+       y="60"
+       ry="15.499997"
+       class="inlay"
+       style="stroke-width:3.77953" />
     <rect
-       style="opacity:0.7;mix-blend-mode:soft-light;fill:url(#linearGradient17)"
-       id="r2fx-7"
-       width="38.099998"
-       height="38.099998"
-       x="15.875"
-       y="9.5249996"
-       ry="9.5249996" />
+       style="fill:url(#linearGradient17);stroke-width:3.77953"
+       id="r2fx_20"
+       width="144"
+       height="144"
+       x="60"
+       y="36"
+       ry="36"
+       class="gradient_fx" />
     <rect
-       style="fill:#ff6600"
-       id="r3o-1"
-       width="31.725809"
-       height="31.744944"
-       x="31.754879"
-       y="0.0050537586"
-       ry="15.862905" />
+       id="r3o_20"
+       width="119.90857"
+       height="119.98089"
+       x="120.01844"
+       y="0.019100821"
+       ry="59.954285"
+       class="form3-bg"
+       style="stroke-width:3.77953" />
     <rect
-       style="fill:#fff6d5"
-       id="r3i-1"
-       width="19.049999"
-       height="19.049999"
-       x="38.099998"
-       y="6.3499999"
-       ry="9.5249996" />
+       id="r3i_20"
+       width="72"
+       height="72"
+       x="144"
+       y="24"
+       ry="36"
+       class="inlay"
+       style="stroke-width:3.77953" />
     <rect
-       style="opacity:0.7;mix-blend-mode:soft-light;fill:url(#linearGradient18)"
-       id="r3fx-5"
-       width="31.725811"
-       height="31.744942"
-       x="31.754879"
-       y="0.0050537586"
-       ry="15.862906" />
+       style="fill:url(#linearGradient18);stroke-width:3.77953"
+       id="r3fx_20"
+       width="119.90858"
+       height="119.98088"
+       x="120.01844"
+       y="0.019100821"
+       ry="59.954292"
+       class="gradient_fx" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="R16"
-     inkscape:label="Raster 16x16"
+     inkscape:label="R16"
      inkscape:highlight-color="#00c865"
      style="display:inline">
     <rect
-       style="fill:#003380"
-       id="r1o"
-       width="39.6875"
-       height="39.6875"
+       id="r1o_16"
+       width="150"
+       height="150"
        x="0"
-       y="23.8125"
+       y="90"
        ry="0"
-       onmouseout="	" />
+       onmouseout=" "
+       class="form1-bg"
+       style="stroke-width:3.77953" />
     <rect
-       style="fill:#d7eef4"
-       id="r1i"
-       width="23.8125"
-       height="23.8125"
-       x="7.9375"
-       y="31.75"
-       ry="0" />
+       id="r1i_16"
+       width="90"
+       height="90"
+       x="30"
+       y="120"
+       ry="0"
+       class="inlay"
+       style="stroke-width:3.77953" />
     <rect
-       style="opacity:0.7;mix-blend-mode:soft-light;fill:url(#linearGradient11)"
-       id="r1fx"
-       width="39.6875"
-       height="39.6875"
+       style="fill:url(#linearGradient11);stroke-width:3.77953"
+       id="r1fx_16"
+       width="150"
+       height="150"
        x="0"
-       y="23.8125"
-       ry="0" />
+       y="90"
+       ry="0"
+       class="gradient_fx" />
     <rect
-       style="fill:#008000"
-       id="r2o"
-       width="35.71875"
-       height="35.71875"
-       x="15.875"
-       y="11.90625"
-       ry="7.9375" />
+       style="fill-opacity:1;stroke-width:3.77953"
+       id="r2o_16"
+       width="135"
+       height="135"
+       x="60"
+       y="45"
+       ry="30"
+       class="form2-bg" />
     <rect
-       style="fill:#e5ffd5"
-       id="r2i"
-       width="19.84375"
-       height="19.84375"
-       x="23.8125"
-       y="19.84375"
-       ry="3.0427084" />
+       id="r2i_16"
+       width="75"
+       height="75"
+       x="90"
+       y="75"
+       ry="11.5"
+       class="inlay"
+       style="stroke-width:3.77953" />
     <rect
-       style="opacity:0.7;mix-blend-mode:soft-light;fill:url(#linearGradient13)"
-       id="r2fx"
-       width="35.71875"
-       height="35.71875"
-       x="15.875"
-       y="11.90625"
-       ry="7.9375" />
+       style="fill:url(#linearGradient13);stroke-width:3.77953"
+       id="r2fx_16"
+       width="135"
+       height="135"
+       x="60"
+       y="45"
+       ry="30"
+       class="gradient_fx" />
     <rect
-       style="fill:#ff6600"
-       id="r3o"
-       width="31.75"
-       height="31.75"
-       x="31.75"
+       id="r3o_16"
+       width="120"
+       height="120"
+       x="120"
        y="0"
-       ry="15.875" />
+       ry="60"
+       class="form3-bg"
+       style="stroke-width:3.77953" />
     <rect
-       style="fill:#fff6d5"
-       id="r3i"
-       width="15.875"
-       height="15.875"
-       x="39.6875"
-       y="7.9375"
-       ry="7.9375" />
+       id="r3i_16"
+       width="60"
+       height="60"
+       x="150"
+       y="30"
+       ry="30"
+       class="inlay"
+       style="stroke-width:3.77953" />
     <rect
-       style="opacity:0.7;mix-blend-mode:soft-light;fill:url(#linearGradient15)"
-       id="r3fx"
-       width="31.75"
-       height="31.75"
-       x="31.75"
+       style="fill:url(#linearGradient15);stroke-width:3.77953"
+       id="r3fx_16"
+       width="120"
+       height="120"
+       x="120"
        y="0"
-       ry="15.875" />
+       ry="60"
+       class="gradient_fx" />
   </g>
   <metadata
      id="metadata3">
