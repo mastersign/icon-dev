@@ -18,6 +18,7 @@
         }
     ],
     "sharpen": 0.4,
+    "overview_resolutions": [16, 20, 24, 32, 40, 48, 64, 128],
     "png_files": {
         "icon-32": 32,
         "icon-64": 64,
