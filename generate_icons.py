@@ -7,7 +7,7 @@
 
 # Abhängigkeiten:
 #   - Python >= 3.8
-#   - Inkscape
+#   - Inkscape >= 1.4
 #   - ImageMagick
 
 from pathlib import Path

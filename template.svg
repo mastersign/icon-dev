@@ -51,7 +51,7 @@
      inkscape:window-x="2560"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="R64"
+     inkscape:current-layer="BG"
      showguides="false">
     <inkscape:grid
        id="grid1"
@@ -301,13 +301,34 @@
        y1="7.9375"
        x2="55.5625"
        y2="31.75" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Out of Focus"
+       id="filter26"
+       x="-0.24"
+       y="-0.24"
+       width="1.48"
+       height="1.48">
+      <feGaussianBlur
+         in="colormatrix1"
+         stdDeviation="16"
+         result="blur"
+         id="feGaussianBlur24" />
+    </filter>
   </defs>
   <g
      inkscape:label="BG"
      inkscape:groupmode="layer"
      id="BG"
      inkscape:highlight-color="#cd1b57"
-     style="display:inline" />
+     style="display:inline">
+    <circle
+       style="filter:url(#filter26);fill:#808080;fill-opacity:1;opacity:0.75"
+       id="shadow"
+       cx="120"
+       cy="120"
+       r="80" />
+  </g>
   <g
      inkscape:groupmode="layer"
      id="R64"
