@@ -17,12 +17,8 @@ import sys
 project_root = Path(__file__).parent
 
 imagemagick_executable = "magick"
-
 tmp_dir = project_root / "tmp"
-out_dir = project_root / "out"
-
 config_file = project_root / "config.json"
-
 font = "Segoe-UI"
 
 
@@ -81,7 +77,7 @@ def generate_overview(tmp_dir: Path, out_dir: Path, sizes: list[int]):
     for size in sizes:
         run_command(tile_command(size, max(*sizes)), working_dir=tmp_dir)
     # Übersicht zusammensetzen
-    run_command(concat_command(out_dir / "overview.png", tmp_dir, sizes))
+    run_command(concat_command(out_dir / "icon-overview.png", tmp_dir, sizes))
     # Kacheln löschen
     for f in tmp_dir.glob("*_tile.png"):
         f.unlink()
@@ -95,8 +91,6 @@ if __name__ == "__main__":
         print("Arbeitsverzeichnis wurde nicht gefunden.", file=sys.stderr)
         exit(1)
 
-    out_dir.mkdir(exist_ok=True)
-
     # Konfiguration einlesen
     with open(config_file, "rb") as f:
         config = json.load(f)
@@ -104,4 +98,4 @@ if __name__ == "__main__":
     sizes = config["overview_resolutions"]
 
     # Übersichtsgrafik für verschiedene Auflösungen erzeugen
-    generate_overview(tmp_dir, out_dir, sizes)
+    generate_overview(tmp_dir, project_root, sizes)
