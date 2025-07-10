@@ -10,23 +10,16 @@
 #   - Inkscape >= 1.4
 #   - ImageMagick
 
+from os import getcwd
 from pathlib import Path
 from shutil import copy
 from subprocess import run
 import json
+import sys
 import xml.etree.ElementTree as XML
-
-project_root = Path(__file__).parent
 
 inkscape_executable = "inkscape"
 imagemagick_executable = "magick"
-
-tmp_dir = project_root / "tmp"
-out_dir = project_root / "out"
-
-config_file = project_root / "config.json"
-
-svg_file = project_root / "template.svg"
 
 NS_SVG = "http://www.w3.org/2000/svg"
 NS_INKSCAPE = "http://www.inkscape.org/namespaces/inkscape"
@@ -49,9 +42,9 @@ def build_layer_style(all_layers: set[str], include_layers: set[str]) -> str:
     """
     Setzt einen CSS-Text für das Ein- und Ausblenden von Ebenen zusammen.
     """
+    exclude_layers = all_layers - include_layers
     include_layer_style = "\n".join(
         f"#{id} {{ display: inline !important; }}" for id in include_layers)
-    exclude_layers = all_layers - include_layers
     exclude_layer_style = "\n".join(
         f"#{id} {{ display: none !important; }}" for id in exclude_layers)
     return "\n".join([include_layer_style, exclude_layer_style])
@@ -71,14 +64,14 @@ def update_svg_style(svg: XML.ElementTree, style: str, id: str = "icondev"):
     style_node.text = style
 
 
-def run_command(command: list[str], exit_on_error: bool = True):
+def run_command(command: list[str], exit_on_error: bool = True) -> bool:
     """
     Führt ein Befehlszeilenprogramm aus.
     Gibt im Fehlerfall die Standardfehlerausgabe aus.
     """
     result = run(command, capture_output=True)
     if result.returncode > 0 or result.stderr:
-        print(result.stderr.decode(errors="replace"))
+        print(result.stderr.decode(errors="replace"), file=sys.stderr)
         if exit_on_error:
             exit(1)
         else:
@@ -95,7 +88,7 @@ def raster_command(src_svg_file: Path, size: int, target_png_file: Path) -> list
     ]
 
 
-def sharpen_command(file: Path, sharpen: float):
+def sharpen_command(file: Path, sharpen: float) -> list[str]:
     return [
         imagemagick_executable,
         "convert",
@@ -117,18 +110,12 @@ def ico_command(src_dir: Path, target_dir: Path, sizes: list[int], name: str) ->
 
 def generate_bitmaps(
         svg: XML.ElementTree,
-        work_dir: Path,
+        tmp_dir: Path,
         resolutions: list[dict],
-        sharpen: float | None,
-        clean: bool = False):
+        sharpen: float | None):
     """
     Rastert ein SVG in verschiedenen Auflösungen mit ausgewählten Ebenen.
     """
-
-    if clean:
-        # Temporäres Verzeichnis bereinigen
-        for f in work_dir.glob("*"):
-            f.unlink()
 
     # Inkscape-Ebenen ermitteln
     all_layers = svg_layers(svg)
@@ -140,13 +127,13 @@ def generate_bitmaps(
         # SVG vorbereiten
         layer_style = build_layer_style(all_layers, include_layers)
         update_svg_style(svg, layer_style, id="layer-visibility")
-        tmp_svg_file = work_dir / "styled.svg"
+        tmp_svg_file = tmp_dir / "styled.svg"
         svg.write(str(tmp_svg_file))
 
         # SVG in verschiedenen Bildgrößen rastern
         sizes = res["sizes"]
         for size in sizes:
-            filename = work_dir / f"{size}.png"
+            filename = tmp_dir / f"{size}.png"
             if filename.exists():
                 continue
             print("Bitmap mit", size, "Pixeln Kantenlänge rastern. Ebenen:",
@@ -157,44 +144,64 @@ def generate_bitmaps(
                 run_command(sharpen_command(filename, sharpen))
 
 
-def copy_png_files(work_dir: Path, target_dir: Path, png_files: dict):
+def copy_png_files(tmp_dir: Path, target_dir: Path, png_files: dict):
     """
     Kopiert PNG-Dateien unter neuem Namen in das Ausgabeverzeichnis.
     """
     for name, size in png_files.items():
         print("PNG:", name)
-        copy(work_dir / f"{size}.png", target_dir / f"{name}.png")
+        copy(tmp_dir / f"{size}.png", target_dir / f"{name}.png")
 
 
-def build_ico_files(work_dir: Path, target_dir: Path, ico_files: dict):
+def build_ico_files(tmp_dir: Path, target_dir: Path, ico_files: dict):
     """
     Erzeugt ICO-Dateien aus mehreren PNG-Dateien.
     """
     for name, sizes in ico_files.items():
         print("ICO:", name)
-        run_command(ico_command(work_dir, target_dir, sizes, name))
+        run_command(ico_command(tmp_dir, target_dir, sizes, name))
 
 
 if __name__ == "__main__":
     # Hauptprogramm
 
-    # Verzeichnisse vorbereiten
-    tmp_dir.mkdir(exist_ok=True)
-    out_dir.mkdir(exist_ok=True)
+    project_root = Path(getcwd())
+
+    config_file = Path(sys.argv[1] if len(sys.argv) > 1 else "config.json")
+    if not config_file.is_absolute():
+        config_file = project_root / config_file
 
     # Konfiguration einlesen
     with open(config_file, "rb") as f:
         config = json.load(f)
 
-    resolutions = config["resolutions"]
-    png_files = config["png_files"]
-    ico_files = config["ico_files"]
-    sharpen = config["sharpen"]
+    # Temporäres Verzeichnis vorbereiten
+    tmp_dir = Path(config["temp_dir"])
+    if not tmp_dir.is_absolute():
+        tmp_dir = project_root / tmp_dir
+    tmp_dir.mkdir(exist_ok=True)
+    for f in tmp_dir.glob("*"):
+        f.unlink()
+
+    # Ausgabeverzeichnis vorbereiten
+    out_dir = Path(config["output_dir"])
+    if not out_dir.is_absolute():
+        out_dir = project_root / out_dir
+    out_dir.mkdir(exist_ok=True)
 
     # SVG laden
+    svg_file = Path(config["svg_file"])
+    if not svg_file.is_absolute():
+        svg_file = project_root / svg_file
     svg = XML.parse(str(svg_file))
 
+    # Konfiguration extrahieren
+    resolutions = config["resolutions"]
+    sharpen = config["sharpen"]
+    png_files = config["png_files"]
+    ico_files = config["ico_files"]
+
     # Bitmaps rastern, schärfen und im Ausgabeverzeichnis ablegen
-    generate_bitmaps(svg, tmp_dir, resolutions, sharpen, clean=True)
+    generate_bitmaps(svg, tmp_dir, resolutions, sharpen)
     copy_png_files(tmp_dir, out_dir, png_files)
     build_ico_files(tmp_dir, out_dir, ico_files)

@@ -9,16 +9,13 @@
 #   - Python >= 3.8
 #   - ImageMagick
 
+from os import getcwd
 from pathlib import Path
 from subprocess import run
 import json
 import sys
 
-project_root = Path(__file__).parent
-
 imagemagick_executable = "magick"
-tmp_dir = project_root / "tmp"
-config_file = project_root / "config.json"
 font = "Segoe-UI"
 
 
@@ -86,15 +83,25 @@ def generate_overview(tmp_dir: Path, out_dir: Path, sizes: list[int]):
 if __name__ == "__main__":
     # Hauptprogramm
 
-    # Verzeichnisse vorbereiten
-    if not tmp_dir.exists():
-        print("Arbeitsverzeichnis wurde nicht gefunden.", file=sys.stderr)
-        exit(1)
+    project_root = Path(getcwd())
+
+    config_file = Path(sys.argv[1] if len(sys.argv) > 1 else "config.json")
+    if not config_file.is_absolute():
+        config_file = project_root / config_file
 
     # Konfiguration einlesen
     with open(config_file, "rb") as f:
         config = json.load(f)
 
+    # Temporäres Verzeichnis überprüfen
+    tmp_dir = Path(config["temp_dir"])
+    if not tmp_dir.is_absolute():
+        tmp_dir = project_root / tmp_dir
+    if not tmp_dir.exists():
+        print("Arbeitsverzeichnis wurde nicht gefunden.", file=sys.stderr)
+        exit(1)
+
+    # Konfiguration extrahieren
     sizes = config["overview_resolutions"]
 
     # Übersichtsgrafik für verschiedene Auflösungen erzeugen

@@ -1,4 +1,7 @@
 {
+    "svg_file": "example.svg",
+    "temp_dir": "tmp",
+    "output_dir": "out",
     "resolutions": [
         {
             "layers": ["BG", "R16"],
@@ -18,7 +21,6 @@
         }
     ],
     "sharpen": 0.4,
-    "overview_resolutions": [16, 20, 24, 32, 40, 48, 64, 128],
     "png_files": {
         "icon-32": 32,
         "icon-64": 64,
@@ -30,5 +32,7 @@
     "ico_files": {
         "desktop_icon": [16, 20, 24, 32, 40, 48, 64, 128, 512],
         "favicon": [16, 20, 24, 32, 128]
-    }
+    },
+    "overview_resolutions": [16, 20, 24, 32, 40, 48, 64, 128],
+    "overview_file": "icon-overview.png"
 }
