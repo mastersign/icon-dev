@@ -7,29 +7,17 @@
    viewBox="0 0 240 240"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    sodipodi:docname="template.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
   <style
-     id="style21">.form1-bg { fill:#003380; }
-.form2-bg { fill:#118000; }
-.form3-bg { fill:#ff5500; }
-.inlay { 
-    opacity:0.75;
-    fill:#ffffff;
-}
-.gradient_fx { 
-    opacity:0.7;
-    mix-blend-mode:soft-light;
-}
-</style>
+     id="style21"></style>
   <title
      id="title3">Icon</title>
   <sodipodi:namedview
@@ -51,7 +39,7 @@
      inkscape:window-x="2560"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="BG"
+     inkscape:current-layer="R16"
      showguides="false">
     <inkscape:grid
        id="grid1"
@@ -65,7 +53,7 @@
        color="#00e53a"
        opacity="0.14902"
        empspacing="4"
-       enabled="false"
+       enabled="true"
        visible="true"
        snapvisiblegridlinesonly="false" />
     <inkscape:grid
@@ -116,18 +104,6 @@
   </sodipodi:namedview>
   <defs
      id="defs1">
-    <linearGradient
-       id="linearGradient10"
-       inkscape:collect="always">
-      <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0"
-         id="stop10" />
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="1"
-         id="stop11" />
-    </linearGradient>
     <inkscape:path-effect
        effect="fillet_chamfer"
        id="path-effect3"
@@ -181,126 +157,6 @@
          result="blend"
          in="fbSourceGraphic" />
     </filter>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient11"
-       x1="7.9375"
-       y1="23.8125"
-       x2="39.6875"
-       y2="55.5625"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(3.7795276,0,0,3.7795276,-15,15)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient13"
-       x1="19.84375"
-       y1="15.875"
-       x2="47.625"
-       y2="43.65625"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="scale(3.7795276)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient15"
-       x1="31.75"
-       y1="7.9375"
-       x2="55.5625"
-       y2="31.75"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(3.7795276,0,0,3.7795276,15,-15)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient16"
-       gradientUnits="userSpaceOnUse"
-       x1="7.9375"
-       y1="23.8125"
-       x2="39.6875"
-       y2="55.5625"
-       gradientTransform="matrix(3.9307083,0,0,3.930709,-15.599997,5.9999996)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient17"
-       gradientUnits="userSpaceOnUse"
-       x1="19.84375"
-       y1="15.875"
-       x2="47.625"
-       y2="43.65625"
-       gradientTransform="matrix(4.0314958,0,0,4.0314962,-3.9999976,-12.000001)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient18"
-       gradientUnits="userSpaceOnUse"
-       x1="31.75"
-       y1="7.9375"
-       x2="55.5625"
-       y2="31.75"
-       gradientTransform="matrix(3.7766481,0,0,3.7789255,15.098436,-14.97851)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient19"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(4.0314954,0,0,4.0314958,-15.999998,7.5660907e-7)"
-       x1="7.9375"
-       y1="23.8125"
-       x2="39.6875"
-       y2="55.5625" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient20"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(3.9195095,0,0,3.9195103,-2.2222181,-6.6666671)"
-       x1="19.84375"
-       y1="15.875"
-       x2="47.625"
-       y2="43.65625" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient21"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(3.7795276,0,0,3.7795276,15.000001,-14.999998)"
-       x1="31.75"
-       y1="7.9375"
-       x2="55.5625"
-       y2="31.75" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient1"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(3.7795276,0,0,3.7795276,-15,15)"
-       x1="7.9375"
-       y1="23.8125"
-       x2="39.6875"
-       y2="55.5625" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient2"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="scale(3.7795276)"
-       x1="19.84375"
-       y1="15.875"
-       x2="47.625"
-       y2="43.65625" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient10"
-       id="linearGradient3"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(3.7795276,0,0,3.7795276,15,-15)"
-       x1="31.75"
-       y1="7.9375"
-       x2="55.5625"
-       y2="31.75" />
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Out of Focus"
@@ -321,367 +177,31 @@
      inkscape:groupmode="layer"
      id="BG"
      inkscape:highlight-color="#cd1b57"
-     style="display:inline">
-    <circle
-       style="filter:url(#filter26);fill:#808080;fill-opacity:1;opacity:0.75"
-       id="shadow"
-       cx="120"
-       cy="120"
-       r="80" />
-  </g>
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="R64"
      inkscape:label="R64"
      inkscape:highlight-color="#4233ee"
-     style="display:none">
-    <rect
-       id="r1o_64"
-       width="150"
-       height="150"
-       x="0"
-       y="90"
-       ry="0"
-       onmouseout=" "
-       class="form1-bg" />
-    <rect
-       id="r1i_64"
-       width="112.5"
-       height="112.5"
-       x="18.75"
-       y="108.75"
-       ry="0"
-       class="inlay"
-       style="stroke-width:1" />
-    <rect
-       style="fill:url(#linearGradient1)"
-       id="r1fx_64"
-       width="150"
-       height="150"
-       x="0"
-       y="90"
-       ry="0"
-       class="gradient_fx" />
-    <rect
-       id="r2o_64"
-       width="135"
-       height="135"
-       x="60"
-       y="45"
-       ry="30"
-       class="form2-bg" />
-    <rect
-       id="r2i_64"
-       width="97.5"
-       height="97.5"
-       x="78.75"
-       y="63.75"
-       ry="15"
-       class="inlay"
-       style="stroke-width:1" />
-    <rect
-       style="fill:url(#linearGradient2)"
-       id="r2fx_64"
-       width="135"
-       height="135"
-       x="60"
-       y="45"
-       ry="30"
-       class="gradient_fx" />
-    <rect
-       id="r3o_64"
-       width="120"
-       height="120"
-       x="120"
-       y="0"
-       ry="60"
-       class="form3-bg" />
-    <rect
-       id="r3i_64"
-       width="82.5"
-       height="82.5"
-       x="138.75"
-       y="18.75"
-       ry="41.25"
-       class="inlay"
-       style="stroke-width:1" />
-    <rect
-       style="fill:url(#linearGradient3)"
-       id="r3fx_64"
-       width="120"
-       height="120"
-       x="120"
-       y="0"
-       ry="60"
-       class="gradient_fx" />
-  </g>
+     style="display:none" />
   <g
      inkscape:groupmode="layer"
      id="R24"
      inkscape:label="R24"
      inkscape:highlight-color="#2f8bb9"
-     style="display:none">
-    <rect
-       id="r1o_24"
-       width="160"
-       height="160"
-       x="4.3136097e-13"
-       y="79.999992"
-       ry="0"
-       onmouseout=" "
-       class="form1-bg"
-       style="stroke-width:3.77953" />
-    <rect
-       id="r1i_24"
-       width="99.999992"
-       height="100"
-       x="30"
-       y="109.99999"
-       ry="0"
-       class="inlay"
-       style="stroke-width:3.77953" />
-    <rect
-       style="fill:url(#linearGradient19);stroke-width:3.77953"
-       id="r1fx_24"
-       width="160"
-       height="160"
-       x="4.3136097e-13"
-       y="79.999992"
-       ry="0"
-       class="gradient_fx" />
-    <rect
-       style="fill-opacity:1;stroke-width:3.77953"
-       id="r2o_24"
-       width="139.99998"
-       height="139.99998"
-       x="60"
-       y="40"
-       ry="29.999998"
-       class="form2-bg" />
-    <rect
-       id="r2i_24"
-       width="80"
-       height="80"
-       x="90"
-       y="69.999992"
-       ry="10.000005"
-       class="inlay"
-       style="stroke-width:3.77953" />
-    <rect
-       style="fill:url(#linearGradient20);stroke-width:3.77953"
-       id="r2fx_24"
-       width="139.99998"
-       height="139.99998"
-       x="60"
-       y="40"
-       ry="29.999998"
-       class="gradient_fx" />
-    <rect
-       id="r3o_24"
-       width="120"
-       height="119.99999"
-       x="120"
-       y="-1.6784475e-15"
-       ry="59.963837"
-       class="form3-bg"
-       style="stroke-width:3.77953" />
-    <rect
-       id="r3i_24"
-       width="60"
-       height="59.999989"
-       x="150"
-       y="30.000002"
-       ry="29.999994"
-       class="inlay"
-       style="stroke-width:3.77953" />
-    <rect
-       style="fill:url(#linearGradient21);stroke-width:3.77953"
-       id="r3fx_24"
-       width="120"
-       height="119.99999"
-       x="120"
-       y="-1.6784475e-15"
-       ry="59.96384"
-       class="gradient_fx" />
-  </g>
+     style="display:none" />
   <g
      inkscape:groupmode="layer"
      id="R20"
      inkscape:label="R20"
      inkscape:highlight-color="#14b6b4"
-     style="display:none">
-    <rect
-       id="r1o_20"
-       width="155.99998"
-       height="156"
-       x="9.0110979e-07"
-       y="84"
-       ry="0"
-       onmouseout=" "
-       class="form1-bg"
-       style="stroke-width:3.77953" />
-    <rect
-       id="r1i_20"
-       width="108"
-       height="107.99999"
-       x="24"
-       y="108"
-       ry="0"
-       class="inlay"
-       style="stroke-width:3.77953" />
-    <rect
-       style="fill:url(#linearGradient16);stroke-width:3.77953"
-       id="r1fx_20"
-       width="155.99998"
-       height="156"
-       x="9.0110979e-07"
-       y="84"
-       ry="0"
-       class="gradient_fx" />
-    <rect
-       style="fill-opacity:1;stroke-width:3.77953"
-       id="r2o_20"
-       width="144"
-       height="144"
-       x="60"
-       y="36"
-       ry="36"
-       class="form2-bg" />
-    <rect
-       id="r2i_20"
-       width="96"
-       height="96"
-       x="84"
-       y="60"
-       ry="15.499997"
-       class="inlay"
-       style="stroke-width:3.77953" />
-    <rect
-       style="fill:url(#linearGradient17);stroke-width:3.77953"
-       id="r2fx_20"
-       width="144"
-       height="144"
-       x="60"
-       y="36"
-       ry="36"
-       class="gradient_fx" />
-    <rect
-       id="r3o_20"
-       width="119.90857"
-       height="119.98089"
-       x="120.01844"
-       y="0.019100821"
-       ry="59.954285"
-       class="form3-bg"
-       style="stroke-width:3.77953" />
-    <rect
-       id="r3i_20"
-       width="72"
-       height="72"
-       x="144"
-       y="24"
-       ry="36"
-       class="inlay"
-       style="stroke-width:3.77953" />
-    <rect
-       style="fill:url(#linearGradient18);stroke-width:3.77953"
-       id="r3fx_20"
-       width="119.90858"
-       height="119.98088"
-       x="120.01844"
-       y="0.019100821"
-       ry="59.954292"
-       class="gradient_fx" />
-  </g>
+     style="display:none" />
   <g
      inkscape:groupmode="layer"
      id="R16"
      inkscape:label="R16"
      inkscape:highlight-color="#00c865"
-     style="display:inline">
-    <rect
-       id="r1o_16"
-       width="150"
-       height="150"
-       x="0"
-       y="90"
-       ry="0"
-       onmouseout=" "
-       class="form1-bg"
-       style="stroke-width:3.77953" />
-    <rect
-       id="r1i_16"
-       width="90"
-       height="90"
-       x="30"
-       y="120"
-       ry="0"
-       class="inlay"
-       style="stroke-width:3.77953" />
-    <rect
-       style="fill:url(#linearGradient11);stroke-width:3.77953"
-       id="r1fx_16"
-       width="150"
-       height="150"
-       x="0"
-       y="90"
-       ry="0"
-       class="gradient_fx" />
-    <rect
-       style="fill-opacity:1;stroke-width:3.77953"
-       id="r2o_16"
-       width="135"
-       height="135"
-       x="60"
-       y="45"
-       ry="30"
-       class="form2-bg" />
-    <rect
-       id="r2i_16"
-       width="75"
-       height="75"
-       x="90"
-       y="75"
-       ry="11.5"
-       class="inlay"
-       style="stroke-width:3.77953" />
-    <rect
-       style="fill:url(#linearGradient13);stroke-width:3.77953"
-       id="r2fx_16"
-       width="135"
-       height="135"
-       x="60"
-       y="45"
-       ry="30"
-       class="gradient_fx" />
-    <rect
-       id="r3o_16"
-       width="120"
-       height="120"
-       x="120"
-       y="0"
-       ry="60"
-       class="form3-bg"
-       style="stroke-width:3.77953" />
-    <rect
-       id="r3i_16"
-       width="60"
-       height="60"
-       x="150"
-       y="30"
-       ry="30"
-       class="inlay"
-       style="stroke-width:3.77953" />
-    <rect
-       style="fill:url(#linearGradient15);stroke-width:3.77953"
-       id="r3fx_16"
-       width="120"
-       height="120"
-       x="120"
-       y="0"
-       ry="60"
-       class="gradient_fx" />
-  </g>
+     style="display:inline" />
   <metadata
      id="metadata3">
     <rdf:RDF>
