@@ -1,6 +1,7 @@
 # Icon Development
 
-Dieses Projekt enthält ein Python-Skript, mit dem aus einer SVG-Datei Icon-Dateien erzeugt werden können.
+Dieses Projekt enthält ein Python-Skript, mit dem aus einer SVG-Datei Icon-Dateien
+für verschiedene Auflösungen und Farbvarianten erzeugt werden können.
 Die SVG-Datei muss mit Inkscape vorbereitet werden.
 
 ![Icon in verschiedenen Auflösungen](icon-overview.png)

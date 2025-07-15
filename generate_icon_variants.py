@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-# Skript zur Generierung von Icon-Dateien aus einer Inkscape-SVG-Datei
+# Skript zur Generierung von Icon-Varianten aus einer Inkscape-SVG-Datei
 # Autor: Tobias Kiertscher <dev@mastersign.de>
-# Version: 2025-07-03
+# Version: 2025-07-15
 # Copyright: MIT License
 
 # Abhängigkeiten:
@@ -48,6 +48,15 @@ def build_layer_style(all_layers: set[str], include_layers: set[str]) -> str:
     exclude_layer_style = "\n".join(
         f"#{id} {{ display: none !important; }}" for id in exclude_layers)
     return "\n".join([include_layer_style, exclude_layer_style])
+
+
+def build_style_from_json(definition: dict[str, dict[str, str]]) -> str:
+    """
+    Wandelt eine CSS-Definition aus der JSON-Konfiguration in eine Zeichenkette um.
+    """
+    return "\n".join(
+        selector + " {\n" + "\n".join(f"  {p}: {v};" for p, v in properties.items()) + "\n}"
+        for selector, properties in definition.items())
 
 
 def update_svg_style(svg: XML.ElementTree, style: str, id: str = "icondev"):
@@ -112,7 +121,8 @@ def generate_bitmaps(
         svg: XML.ElementTree,
         tmp_dir: Path,
         resolutions: list[dict],
-        sharpen: float | None):
+        sharpen: float | None = None,
+        extra_style: str | None = None):
     """
     Rastert ein SVG in verschiedenen Auflösungen mit ausgewählten Ebenen.
     """
@@ -127,6 +137,8 @@ def generate_bitmaps(
         # SVG vorbereiten
         layer_style = build_layer_style(all_layers, include_layers)
         update_svg_style(svg, layer_style, id="layer-visibility")
+        if extra_style:
+            update_svg_style(svg, extra_style, id="extra-style")
         tmp_svg_file = tmp_dir / "styled.svg"
         svg.write(str(tmp_svg_file))
 
@@ -162,32 +174,43 @@ def build_ico_files(tmp_dir: Path, target_dir: Path, ico_files: dict):
         run_command(ico_command(tmp_dir, target_dir, sizes, name))
 
 
+def absolute_path(p: Path, base: Path):
+    return p if p.is_absolute() else base / p
+
+
+def prepare_dir(p: Path, clean: bool = False):
+    """
+    Stellt sicher, dass das übergebene Verzeichnis existiert.
+    Löscht optional alle Dateien in dem Verzeichnis.
+    Unterordner bleiben unberührt.
+    """
+    p.mkdir(exist_ok=True)
+    if clean:
+        for f in p.glob("*"):
+            if f.is_file():
+                f.unlink()
+
+
 if __name__ == "__main__":
     # Hauptprogramm
 
     project_root = Path(getcwd())
 
-    config_file = Path(sys.argv[1] if len(sys.argv) > 1 else "config.json")
-    if not config_file.is_absolute():
-        config_file = project_root / config_file
+    config_file = absolute_path(
+        Path(sys.argv[1] if len(sys.argv) > 1 else "config.json"),
+        project_root)
 
     # Konfiguration einlesen
     with open(config_file, "rb") as f:
         config = json.load(f)
 
     # Temporäres Verzeichnis vorbereiten
-    tmp_dir = Path(config["temp_dir"])
-    if not tmp_dir.is_absolute():
-        tmp_dir = project_root / tmp_dir
-    tmp_dir.mkdir(exist_ok=True)
-    for f in tmp_dir.glob("*"):
-        f.unlink()
+    tmp_dir = absolute_path(Path(config["temp_dir"]), project_root)
+    prepare_dir(tmp_dir, clean=True)
 
     # Ausgabeverzeichnis vorbereiten
-    out_dir = Path(config["output_dir"])
-    if not out_dir.is_absolute():
-        out_dir = project_root / out_dir
-    out_dir.mkdir(exist_ok=True)
+    out_dir = absolute_path(Path(config["output_dir"]), project_root)
+    prepare_dir(out_dir)
 
     # SVG laden
     svg_file = Path(config["svg_file"])
@@ -200,8 +223,18 @@ if __name__ == "__main__":
     sharpen = config["sharpen"]
     png_files = config["png_files"]
     ico_files = config["ico_files"]
+    variants = config["variants"]
 
-    # Bitmaps rastern, schärfen und im Ausgabeverzeichnis ablegen
-    generate_bitmaps(svg, tmp_dir, resolutions, sharpen)
-    copy_png_files(tmp_dir, out_dir, png_files)
-    build_ico_files(tmp_dir, out_dir, ico_files)
+    # Varianten abarbeiten
+    for variant, style in variants.items():
+        print("Variante", variant)
+        # Variantenverzeichnisse vorbereiten
+        variant_tmp_dir = tmp_dir / variant
+        prepare_dir(variant_tmp_dir, clean=True)
+        variant_out_dir = out_dir / variant
+        prepare_dir(variant_out_dir)
+        # Bitmaps rastern, schärfen und im Ausgabeverzeichnis ablegen
+        generate_bitmaps(svg, variant_tmp_dir, resolutions, sharpen,
+                         extra_style=build_style_from_json(style))
+        copy_png_files(variant_tmp_dir, variant_out_dir, png_files)
+        build_ico_files(variant_tmp_dir, variant_out_dir, ico_files)

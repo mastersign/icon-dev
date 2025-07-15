@@ -33,6 +33,31 @@
         "desktop_icon": [16, 20, 24, 32, 40, 48, 64, 128, 512],
         "favicon": [16, 20, 24, 32, 128]
     },
+    "variants": {
+        "default": {
+            ".form1-bg": { "fill": "#003380" },
+            ".form2-bg": { "fill": "#118000" },
+            ".form3-bg": { "fill": "#ff5500" }
+        },
+        "dark": {
+            ".inlay": { "fill": "#000000" }
+        },
+        "red": {
+            ".form1-bg": { "fill": "#6a0023" },
+            ".form2-bg": { "fill": "#a00e00" },
+            ".form3-bg": { "fill": "#ff5500" }
+        },
+        "green": {
+            ".form1-bg": { "fill": "#265000" },
+            ".form2-bg": { "fill": "#118000" },
+            ".form3-bg": { "fill": "#00d125" }
+        },
+        "blue": {
+            ".form1-bg": { "fill": "#003380" },
+            ".form2-bg": { "fill": "#0065ab" },
+            ".form3-bg": { "fill": "#00b7ff" }
+        }
+    },
     "overview_resolutions": [16, 20, 24, 32, 40, 48, 64, 128],
     "overview_file": "icon-overview.png"
 }
