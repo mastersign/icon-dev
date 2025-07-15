@@ -53,7 +53,7 @@ def tile_command(size: int, max_size: int):
     ]
 
 
-def concat_command(target_file: Path, tmp_dir: Path, sizes: list[int]) -> list[str]:
+def concat_tiles_command(target_file: Path, tmp_dir: Path, sizes: list[int]) -> list[str]:
     return [
         imagemagick_executable,
         "montage",
@@ -66,7 +66,20 @@ def concat_command(target_file: Path, tmp_dir: Path, sizes: list[int]) -> list[s
     ]
 
 
-def generate_overview(tmp_dir: Path, out_dir: Path, sizes: list[int]):
+def concat_variants_command(target_file: Path, base_dir: Path, overview_file: str, variants: list[str]) -> list[str]:
+    return [
+        imagemagick_executable,
+        "montage",
+        "-background", "transparent",
+        *(str(base_dir / v / overview_file) for v in variants),
+        "-mode", "Concatenate",
+        "-tile", "1x",
+        "-geometry", "+0+4",
+        str(target_file),
+    ]
+
+
+def generate_overview(tmp_dir: Path, out_dir: Path, result_file: str, sizes: list[int]):
     """
     Erzeugt eine Übersicht des Icons in mehreren Auflösungen.
     """
@@ -74,10 +87,37 @@ def generate_overview(tmp_dir: Path, out_dir: Path, sizes: list[int]):
     for size in sizes:
         run_command(tile_command(size, max(*sizes)), working_dir=tmp_dir)
     # Übersicht zusammensetzen
-    run_command(concat_command(out_dir / "icon-overview.png", tmp_dir, sizes))
+    run_command(concat_tiles_command(out_dir / result_file, tmp_dir, sizes))
     # Kacheln löschen
     for f in tmp_dir.glob("*_tile.png"):
         f.unlink()
+
+
+def generate_variants_overview(tmp_dir: Path, out_dir: Path, result_file: str, sizes: list[int], variants: list[str]):
+    """
+    Erzeugt eine Übersicht des Icons in mehreren Auflösungen und Varianten.
+    """
+    # Übersicht für jede gegebene Variante erzeugen
+    for variant in variants:
+        variant_tmp_dir = tmp_dir / variant
+        generate_overview(variant_tmp_dir, variant_tmp_dir, "overview.png", sizes)
+    # Gesamtübersicht zusammensetzen
+    run_command(concat_variants_command(out_dir / result_file, tmp_dir, "overview.png", variants))
+
+
+def absolute_path(p: Path, base: Path):
+    return p if p.is_absolute() else base / p
+
+
+def assure_dir(p: Path, caption: str = "Verzeichnis"):
+    """
+    Prüft, ob das übergebene Verzeichnis existiert.
+    Bricht das Programm mit Exit-Code 1 ab, falls das Verzeichnis nicht existiert.
+    """
+    if not p.exists() or not p.is_dir():
+        print(caption, "wurde nicht gefunden.", file=sys.stderr)
+        exit(1)
+    return p
 
 
 if __name__ == "__main__":
@@ -94,15 +134,20 @@ if __name__ == "__main__":
         config = json.load(f)
 
     # Temporäres Verzeichnis überprüfen
-    tmp_dir = Path(config["temp_dir"])
-    if not tmp_dir.is_absolute():
-        tmp_dir = project_root / tmp_dir
-    if not tmp_dir.exists():
-        print("Arbeitsverzeichnis wurde nicht gefunden.", file=sys.stderr)
-        exit(1)
+    tmp_dir = absolute_path(Path(config["temp_dir"]), project_root)
+    assure_dir(tmp_dir)
+    # Ausgabeverzeichnis überprüfen
+    out_dir = absolute_path(Path(config["output_dir"]), project_root)
+    assure_dir(out_dir)
 
     # Konfiguration extrahieren
     sizes = config["overview_resolutions"]
+    variants = config["overview_variants"]
+    result_file = config["overview_file"]
 
-    # Übersichtsgrafik für verschiedene Auflösungen erzeugen
-    generate_overview(tmp_dir, project_root, sizes)
+    if len(variants) == 0:
+        # Übersichtsgrafik für verschiedene Auflösungen erzeugen
+        generate_overview(tmp_dir, out_dir, result_file, sizes)
+    else:
+        # Übersichtsgrafik für verschiedene Varianten und Auflösungen erzeugen
+        generate_variants_overview(tmp_dir, out_dir, result_file, sizes, variants)

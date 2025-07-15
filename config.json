@@ -59,5 +59,6 @@
         }
     },
     "overview_resolutions": [16, 20, 24, 32, 40, 48, 64, 128],
+    "overview_variants": ["default", "dark", "blue", "green", "red"],
     "overview_file": "icon-overview.png"
 }
